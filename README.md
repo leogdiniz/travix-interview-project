@@ -1,13 +1,13 @@
 **About my solution**
 
-Run the application and going to http://localhost:8080/v1/flight/list a json array with 4 elements will be shown.
+Running the application and going to http://localhost:8080/v1/flight/list a json array with 5 elements will be shown.
 In this list, there will be flights from both CrazyAir and ToughJet ordered by fare.
 
 **My approach**
 
 My intention was to use a design pattern that would make it easy to aggregate other services if needed.
-The way it was built any new service would only need to implement the interface BusyFlightsAdapter and it would be ready to go.
-I used Lombok in order to remove the boilerplate code of getters, setters and builders.
+The way it was built, any new service would only need to implement the interface BusyFlightsAdapter and it would be ready to go.
+I used Lombok in order to remove the boilerplate code of getters, setters and builders. Since it uses java aspect it doesn't represent any harm performance wise.
 
 For the tests, I tried to focus on the requirements such as the fare rounded to 2 decimals, the date being in the ISO format and that the controller is able to get the data from the request correctly.
 
