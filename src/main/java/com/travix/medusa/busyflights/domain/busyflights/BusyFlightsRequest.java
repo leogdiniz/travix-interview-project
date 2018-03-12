@@ -1,50 +1,34 @@
 package com.travix.medusa.busyflights.domain.busyflights;
 
+import java.time.LocalDate;
+
+import javax.validation.constraints.Max;
+
+import org.hibernate.validator.constraints.Length;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
 public class BusyFlightsRequest {
 
+    @Length(max = 3, min = 3)
     private String origin;
+    @Length(max = 3, min = 3)
     private String destination;
-    private String departureDate;
-    private String returnDate;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate departureDate;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate returnDate;
+    @Max(4)
     private int numberOfPassengers;
 
-    public String getOrigin() {
-        return origin;
-    }
-
-    public void setOrigin(final String origin) {
-        this.origin = origin;
-    }
-
-    public String getDestination() {
-        return destination;
-    }
-
-    public void setDestination(final String destination) {
-        this.destination = destination;
-    }
-
-    public String getDepartureDate() {
-        return departureDate;
-    }
-
-    public void setDepartureDate(final String departureDate) {
-        this.departureDate = departureDate;
-    }
-
-    public String getReturnDate() {
-        return returnDate;
-    }
-
-    public void setReturnDate(final String returnDate) {
-        this.returnDate = returnDate;
-    }
-
-    public int getNumberOfPassengers() {
-        return numberOfPassengers;
-    }
-
-    public void setNumberOfPassengers(final int numberOfPassengers) {
-        this.numberOfPassengers = numberOfPassengers;
-    }
 }
