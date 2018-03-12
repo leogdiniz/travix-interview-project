@@ -12,6 +12,7 @@ I used Lombok in order to remove the boilerplate code of getters, setters and bu
 For the tests, I tried to focus on the requirements such as the fare rounded to 2 decimals, the date being in the ISO format and that the controller is able to get the data from the request correctly.
 
 **What I could've done with more time**
+
 I would've customized the validation messages for number of passengers over 4 people and origin parameter longer than 3 letters.
 The data from CrazyAir and ToughJet are hardcoded.
 I thought of using an H2 database to save the data and select from it but since it would come from an API I did not spend time on it.  
